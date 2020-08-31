@@ -21,18 +21,17 @@ function playRound(playerSelection, computerSelection) {
   // exception of Rock beating Scissors
   // Check for Rock and Scissors first
   // otherwise check for greater index value
+  // or tie
   if (player === 0 && computer === 2) {
-    console.log("Rock beats Scissors! Player Wins!");
+    return "Rock beats Scissors! Player Wins!";
   } else if (computer === 0 && player === 2) {
-    console.log("Rock beats Scissors! Computer Wins!");
+    return "Rock beats Scissors! Computer Wins!";
   } else if (player > computer) {
-    console.log(`${playerSelection} beats ${computerSelection}! Player Wins!`);
+    return `${playerSelection} beats ${computerSelection}! Player Wins!`;
   } else if (player === computer) {
-    console.log(`Both picked ${computerSelection}. Tie!`);
+    return `Both picked ${computerSelection}. Tie!`;
   } else {
-    console.log(
-      `${computerSelection} beats ${playerSelection}! Computer Wins!`
-    );
+    return `${computerSelection} beats ${playerSelection}! Computer Wins!`;
   }
 }
 
@@ -46,7 +45,7 @@ function game() {
     );
     // Let computer randomly pick
     const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
   }
 }
 
